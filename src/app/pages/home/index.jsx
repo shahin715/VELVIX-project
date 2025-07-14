@@ -1,4 +1,5 @@
 import React from "react";
+// import Test from "../../../components/Header/navbar/test";
 import Banner from "../../../components/Banner";
 import PromotionalCampaign from "../../../components/Promotional__Campaign/promotional";
 import DealsToday from "../../../components/Deals_Today/DealsToday";
@@ -10,6 +11,7 @@ import LowerBanner from "../../../components/Lower_Banner/lowerBanner"
 function Home() {
   return (
     <>
+    {/* <Test/> */}
     <LowerNavbar/>
       <Banner />
       <PromotionalCampaign />

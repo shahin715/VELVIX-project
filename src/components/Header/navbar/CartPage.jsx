@@ -1,11 +1,12 @@
-
 import { useCart } from "../../../context/CartContext";
 import { Trash2, Plus, Minus, ShoppingBag, Sparkles } from "lucide-react";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function CartPage() {
   const { cartItems, updateQuantity, removeFromCart } = useCart();
   const [loadingItems, setLoadingItems] = useState(new Set());
+  const navigate = useNavigate();
 
   const totalPrice = cartItems.reduce(
     (sum, item) => sum + parseFloat(item.price) * item.quantity,
@@ -146,6 +147,7 @@ export default function CartPage() {
 
           <button
             className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-lg font-semibold flex items-center gap-3 transition text-lg"
+            onClick={() => navigate("/checkout")} // ✅ Navigate to checkout
             disabled={cartItems.length === 0}
           >
             <ShoppingBag className="w-6 h-6" />
@@ -157,5 +159,6 @@ export default function CartPage() {
     </div>
   );
 }
+
 
 

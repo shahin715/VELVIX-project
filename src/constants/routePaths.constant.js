@@ -16,6 +16,7 @@ const ROUTE_CARD = "/card";
 const ROUTE_CHECKOUT = "/checkout";
 const ROUTE_DEALTODAYDETAILS = "/deals-today"; 
 const ROUTE_CARTPAGE = "/cart"; // Added for Cart Page
+const ROUTE_THANKYOU = "/thank-you"; // Added for Thank You Page
 
 
 // Updated
@@ -40,6 +41,7 @@ const routePaths = {
     ROUTE_CHECKOUT,
     ROUTE_DEALTODAYDETAILS,
     ROUTE_CARTPAGE, 
+    ROUTE_THANKYOU, // Added for Thank You Page
 }
 
 export default routePaths;

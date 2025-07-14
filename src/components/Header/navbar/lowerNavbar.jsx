@@ -83,8 +83,8 @@ export function DynamicNavbar({
 
   return (
        
-    <nav style={{  marginTop: "10px", }} className="w-full bg-gradient-to-r  from-blue-500 via-blue-600 to-blue-700 shadow-lg relative z-50 container-box">
-      <div className="max-w-7xl mx-auto">
+    <nav style={{  marginTop: "10px", }} className="w-full bg-gradient-to-r  from-blue-500 via-blue-600 to-blue-700 shadow-lg relative z-50 ">
+      <div className="max-w-7xl mx-auto container-box">
         <div className="flex items-center justify-between h-14">
           {/* Categories Section */}
           <div className="flex-shrink-0">

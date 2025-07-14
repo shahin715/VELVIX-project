@@ -30,9 +30,16 @@ const publicRoutes = {
          {
             path:routePaths.ROUTE_CHECKOUT,
             lazy: async () => ({
-                Component: (await import('../pages/checkout')).default,
+                Component: (await import('../pages/checkout/checkout')).default,
             }),
         },
+         {
+            path:routePaths.ROUTE_THANKYOU,
+            lazy: async () => ({
+                Component: (await import('../pages/thankyou/thankYou')).default,
+            }),
+        },
+          
                 {
             path: `${routePaths.ROUTE_DEALTODAYDETAILS}/:id`,
             lazy: async () => ({

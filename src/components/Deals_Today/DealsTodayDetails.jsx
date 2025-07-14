@@ -1,14 +1,21 @@
-
 import { useParams } from "react-router-dom";
 import { useState } from "react";
-import { Heart, Star, ShoppingCart, Plus, Minus, Facebook, MessageCircle } from "lucide-react";
-
-import Img1 from '../../assets/images/Deals_today1.jpg';
-import Img2 from '../../assets/images/Dealstoday2.png';
-import Img3 from '../../assets/images/Deals_today3.png';
-import Img4 from '../../assets/images/Deals_today4.png';
-import Img5 from '../../assets/images/Deals_today5.webp';
-import Img6 from '../../assets/images/Deals_today6.webp';
+import {
+  Heart,
+  Star,
+  ShoppingCart,
+  Plus,
+  Minus,
+  Facebook,
+  MessageCircle,
+} from "lucide-react";
+import { useCart } from "../../context/CartContext";
+import Img1 from "../../assets/images/Deals_today1.jpg";
+import Img2 from "../../assets/images/Dealstoday2.png";
+import Img3 from "../../assets/images/Deals_today3.png";
+import Img4 from "../../assets/images/Deals_today4.png";
+import Img5 from "../../assets/images/Deals_today5.webp";
+import Img6 from "../../assets/images/Deals_today6.webp";
 
 const allProducts = [
   {
@@ -81,7 +88,9 @@ const allProducts = [
       { label: "LAN", value: "1 Gb" },
       { label: "Audio", value: "HD Audio" },
     ],
-    warrantyOptions: [{ id: "warranty-3", label: "2 years warranty", value: "free" }],
+    warrantyOptions: [
+      { id: "warranty-3", label: "2 years warranty", value: "free" },
+    ],
   },
   {
     id: "4",
@@ -100,7 +109,9 @@ const allProducts = [
       { label: "Voltage", value: "1.25V" },
       { label: "Warranty", value: "Limited Lifetime" },
     ],
-    warrantyOptions: [{ id: "warranty-4", label: "Lifetime warranty", value: "free" }],
+    warrantyOptions: [
+      { id: "warranty-4", label: "Lifetime warranty", value: "free" },
+    ],
   },
   {
     id: "5",
@@ -119,7 +130,9 @@ const allProducts = [
       { label: "Memory", value: "DDR5 8000" },
       { label: "Audio", value: "ALC897" },
     ],
-    warrantyOptions: [{ id: "warranty-5", label: "3-year warranty", value: "free" }],
+    warrantyOptions: [
+      { id: "warranty-5", label: "3-year warranty", value: "free" },
+    ],
   },
   {
     id: "6",
@@ -138,25 +151,32 @@ const allProducts = [
       { label: "Write", value: "6600 MB/s" },
       { label: "TBW", value: "1200TB" },
     ],
-    warrantyOptions: [{ id: "warranty-6", label: "5 years warranty", value: "free" }],
+    warrantyOptions: [
+      { id: "warranty-6", label: "5 years warranty", value: "free" },
+    ],
   },
 ];
 
 export default function DealsTodayDetails() {
   const { id } = useParams();
-  const product = allProducts.find(p => p.id === id);
+  const product = allProducts.find((p) => p.id === id);
   const [quantity, setQuantity] = useState(1);
   const [activeTab, setActiveTab] = useState("specifications");
+  const { addToCart } = useCart();
 
-  if (!product) return <div className="text-center py-20 text-red-600">Product not found.</div>;
+  if (!product)
+    return (
+      <div className="text-center py-20 text-red-600">Product not found.</div>
+    );
 
   const handleQuantityChange = (type) => {
-    setQuantity(prev => Math.max(1, type === "increment" ? prev + 1 : prev - 1));
+    setQuantity((prev) =>
+      Math.max(1, type === "increment" ? prev + 1 : prev - 1)
+    );
   };
 
   return (
-   
-       <div className="container mx-auto px-4 py-10 container-box">
+    <div className="container mx-auto px-4 py-10 container-box">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
         {/* Product Image */}
         <div className="flex flex-col items-center">
@@ -169,18 +189,30 @@ export default function DealsTodayDetails() {
           </div>
           <div className="mt-4">
             <div className="w-20 h-16 border border-orange-500 rounded-md p-2">
-              <img src={product.image} alt="Thumb" className="object-contain w-full h-full" />
+              <img
+                src={product.image}
+                alt="Thumb"
+                className="object-contain w-full h-full"
+              />
             </div>
           </div>
         </div>
 
         {/* Product Details */}
         <div className="flex flex-col gap-6">
-          <h1 className="text-2xl sm:text-3xl font-bold text-gray-900">{product.title}</h1>
+          <h1 className="text-2xl sm:text-3xl font-bold text-gray-900">
+            {product.title}
+          </h1>
           <div className="flex items-center gap-4 text-sm text-gray-600">
-            <span>Brand: <strong>{product.brand}</strong></span>
-            <span>SKU: <strong>{product.sku}</strong></span>
-            <span className="ml-auto px-2 py-1 bg-green-100 text-green-700 text-xs rounded">IN STOCK</span>
+            <span>
+              Brand: <strong>{product.brand}</strong>
+            </span>
+            <span>
+              SKU: <strong>{product.sku}</strong>
+            </span>
+            <span className="ml-auto px-2 py-1 bg-green-100 text-green-700 text-xs rounded">
+              IN STOCK
+            </span>
           </div>
 
           {/* Key Features */}
@@ -188,17 +220,28 @@ export default function DealsTodayDetails() {
             <h2 className="font-semibold text-gray-800">Key Features</h2>
             <ul className="list-disc list-inside text-gray-700">
               {product.keyFeatures.map((f, i) => (
-                <li key={i}><strong>{f.label}:</strong> {f.value}</li>
+                <li key={i}>
+                  <strong>{f.label}:</strong> {f.value}
+                </li>
               ))}
             </ul>
           </div>
 
-          <div className="text-3xl font-bold text-orange-600">৳ {product.price}</div>
+          <div className="text-3xl font-bold text-orange-600">
+            ৳ {product.price}
+          </div>
           <p className="text-sm text-gray-500">Inclusive of VAT.</p>
 
           <div className="flex items-center gap-2 text-gray-600">
             {[...Array(5)].map((_, i) => (
-              <Star key={i} className={`w-4 h-4 ${i < 3 ? "fill-yellow-400 text-yellow-400" : "fill-gray-300 text-gray-300"}`} />
+              <Star
+                key={i}
+                className={`w-4 h-4 ${
+                  i < 3
+                    ? "fill-yellow-400 text-yellow-400"
+                    : "fill-gray-300 text-gray-300"
+                }`}
+              />
             ))}
             <span className="text-sm ml-2">0 Review</span>
           </div>
@@ -220,8 +263,12 @@ export default function DealsTodayDetails() {
           <div>
             <h2 className="font-semibold text-gray-800">Warranty</h2>
             {product.warrantyOptions.map((opt) => (
-              <label key={opt.id} className="flex items-center gap-2 text-sm mt-2">
-                <input type="radio" name="warranty" defaultChecked /> {opt.label}
+              <label
+                key={opt.id}
+                className="flex items-center gap-2 text-sm mt-2"
+              >
+                <input type="radio" name="warranty" defaultChecked />{" "}
+                {opt.label}
               </label>
             ))}
           </div>
@@ -248,7 +295,10 @@ export default function DealsTodayDetails() {
                 <Plus className="w-4 h-4" />
               </button>
             </div>
-            <button className="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded flex items-center gap-2">
+            <button
+              className="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded flex items-center gap-2"
+              onClick={() => addToCart(product, quantity)}
+            >
               <ShoppingCart className="h-5 w-5" />
               Add to Cart
             </button>
@@ -280,7 +330,9 @@ export default function DealsTodayDetails() {
               <table className="min-w-full text-left text-sm">
                 <thead>
                   <tr>
-                    <th className="p-2 bg-gray-100" colSpan={2}>Key Features</th>
+                    <th className="p-2 bg-gray-100" colSpan={2}>
+                      Key Features
+                    </th>
                   </tr>
                 </thead>
                 <tbody>
@@ -290,7 +342,11 @@ export default function DealsTodayDetails() {
                       <td className="p-2">{f.value}</td>
                     </tr>
                   ))}
-                  <tr><td className="p-2 bg-gray-100" colSpan={2}>Main Features</td></tr>
+                  <tr>
+                    <td className="p-2 bg-gray-100" colSpan={2}>
+                      Main Features
+                    </td>
+                  </tr>
                   {product.mainFeatures.map((f, i) => (
                     <tr key={i} className={i % 2 ? "bg-gray-50" : ""}>
                       <td className="p-2 font-medium">{f.label}</td>
@@ -304,7 +360,10 @@ export default function DealsTodayDetails() {
 
           {activeTab === "description" && (
             <div className="text-gray-700">
-              <p>This is a placeholder description for {product.title}. Add full product details here.</p>
+              <p>
+                This is a placeholder description for {product.title}. Add full
+                product details here.
+              </p>
             </div>
           )}
 
@@ -316,6 +375,5 @@ export default function DealsTodayDetails() {
         </div>
       </div>
     </div>
-   
   );
-} 
+}

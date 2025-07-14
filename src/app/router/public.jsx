@@ -39,6 +39,12 @@ const publicRoutes = {
                 Component: (await import('../../components/Deals_Today/DealsTodayDetails')).default,
             }),
         },
+         {
+            path:routePaths.ROUTE_CARTPAGE,
+            lazy: async () => ({
+                Component: (await import('../../components/Header/navbar/CartPage')).default,
+            }),
+        },
         
     ],
 };

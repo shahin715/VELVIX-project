@@ -14,7 +14,10 @@ const ROUTE_CONTACT = "/contact";
 const ROUTE_SHOPS = "/shops";
 const ROUTE_CARD = "/card";
 const ROUTE_CHECKOUT = "/checkout";
-const ROUTE_DEALTODAYDETAILS = "/deals-today"; // ✅ FIXED
+const ROUTE_DEALTODAYDETAILS = "/deals-today"; 
+const ROUTE_CARTPAGE = "/cart"; // Added for Cart Page
+
+
 // Updated
 
 
@@ -35,7 +38,8 @@ const routePaths = {
     ROUTE_SHOPS,
     ROUTE_CARD,
     ROUTE_CHECKOUT,
-    ROUTE_DEALTODAYDETAILS, // Updated
+    ROUTE_DEALTODAYDETAILS,
+    ROUTE_CARTPAGE, 
 }
 
 export default routePaths;

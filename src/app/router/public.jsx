@@ -21,10 +21,16 @@ const publicRoutes = {
         Component: (await import("../pages/shops/Details")).default,
       }),
     },
-      {
+    {
       path: routePaths.ROUTE_LOGIN,
       lazy: async () => ({
         Component: (await import("../pages/Login/login")).default,
+      }),
+    },
+    {
+      path: "/signup",
+      lazy: async () => ({
+        Component: (await import("../pages/signup/signup")).default,
       }),
     },
     {

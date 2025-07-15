@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { Heart, Share2 } from "lucide-react";
-import MarginX10 from "../shared/MarginX10";
+
 
 export default function ProductGrid({
   heading = "Featured Products",
@@ -30,7 +30,7 @@ export default function ProductGrid({
   };
 
   return (
-    <MarginX10>
+
       <div className="bg-gray-50 px-3 sm:px-6 py-6">
         <div className="container-box">
           <h2 className="text-xl sm:text-2xl font-semibold text-gray-800 mb-6 sm:mb-8">
@@ -38,7 +38,7 @@ export default function ProductGrid({
           </h2>
 
           <div
-            style={{ marginTop: "40px" }}
+           
             className={`grid ${getGridClass(columns)} gap-4 sm:gap-6`}
           >
             {displayedProducts.map((product) => {
@@ -117,7 +117,7 @@ export default function ProductGrid({
           </div>
         </div>
       </div>
-    </MarginX10>
+   
   );
 }
 

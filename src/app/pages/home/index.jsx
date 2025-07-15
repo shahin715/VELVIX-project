@@ -5,8 +5,9 @@ import PromotionalCampaign from "../../../components/Promotional__Campaign/promo
 import DealsToday from "../../../components/Deals_Today/DealsToday";
 import FeaturedCPU from "../../../components/Featured_CPU/FeaturedCPU";
 import FeaturedBrandsName from "../../../components/Featured_Brands/FeaturedBrandsName";
-import LowerNavbar from "../../../components/Header/navbar/lowerNavbar"
-import LowerBanner from "../../../components/Lower_Banner/lowerBanner"
+import LowerNavbar from "../../../components/Header/navbar/lowerNavbar";
+import LowerBanner from "../../../components/Lower_Banner/lowerBanner";
+import FeaturedCategories from "../../../components/FeaturedCategories/FeaturedCategories";
 
 function Home() {
   return (
@@ -15,6 +16,7 @@ function Home() {
     <LowerNavbar/>
       <Banner />
       <PromotionalCampaign />
+      <FeaturedCategories/>
       <DealsToday />
       <FeaturedCPU />
       <FeaturedBrandsName />

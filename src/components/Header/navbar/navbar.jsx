@@ -3,12 +3,13 @@ import { Link } from "react-router-dom";
 import logoImage from "../../../assets/images/logo.png";
 import { Search, User, Heart, Maximize2, ShoppingBag } from "lucide-react";
 import { useCart } from "../../../context/CartContext";
+import routePaths from "../../../constants/routePaths.constant";
 
 export default function Navbar() {
   const { cartCount } = useCart();
 
   return (
-    <header className="w-full bg-white border-b border-gray-200 ">
+    <header className="w-full bg-white border-b border-gray-200">
       <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between container-box">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-3">
@@ -36,10 +37,15 @@ export default function Navbar() {
 
         {/* Action Icons (right aligned) */}
         <div className="flex items-center gap-2 ml-auto">
-          <button className="w-10 h-10 flex items-center justify-center text-gray-600 hover:bg-gray-100 rounded-md transition-colors">
+          {/* ✅ Login Link */}
+          <Link
+            to={routePaths.ROUTE_LOGIN}
+            className="w-10 h-10 flex items-center justify-center text-gray-600 hover:bg-gray-100 rounded-md transition-colors"
+          >
             <User className="w-5 h-5" />
-            <span className="sr-only">Account</span>
-          </button>
+            <span className="sr-only">Login</span>
+          </Link>
+
           <button className="w-10 h-10 flex items-center justify-center text-gray-600 hover:bg-gray-100 rounded-md transition-colors">
             <Heart className="w-5 h-5" />
             <span className="sr-only">Favorites</span>

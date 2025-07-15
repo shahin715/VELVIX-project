@@ -4,7 +4,7 @@ import Img2 from '../../assets/images/banner2.jpg';
 import Img3 from '../../assets/images/banner3.webp';
 import Img4 from '../../assets/images/banner4.jpg';
 import Img5 from '../../assets/images/banner5.webp';
-import MarginX10 from '../shared/MarginX10'
+
 
 const bannerImages = [Img1, Img2, Img3, Img4, Img5];
 
@@ -30,8 +30,8 @@ function Banner() {
   }, []);
 
   return (
-     <MarginX10>
-   <div style={{ marginTop: "40px", width: "100%" }} className="container-box">
+     
+   <div  className="container-box">
       <div className="relative w-full h-[56.25vw] max-h-[70vh] mx-auto bg-black overflow-hidden">
         <div
           className="flex transition-transform duration-700 ease-in-out h-full"
@@ -63,7 +63,7 @@ function Banner() {
         </button>
       </div>
     </div>
-    </MarginX10>
+  
   );
 }
 

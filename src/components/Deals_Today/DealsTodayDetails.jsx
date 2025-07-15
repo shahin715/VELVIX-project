@@ -176,7 +176,7 @@ export default function DealsTodayDetails() {
   };
 
   return (
-    <div className="container mx-auto px-4 py-10 container-box">
+    <div className="container mx-auto px-4 py-10 container-box min-h-[80vh]">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
         {/* Product Image */}
         <div className="flex flex-col items-center">
@@ -200,7 +200,7 @@ export default function DealsTodayDetails() {
 
         {/* Product Details */}
         <div className="flex flex-col gap-6">
-          <h1 className="text-2xl sm:text-3xl font-bold text-gray-900">
+          <h1  style={{ marginLeft: "15px", marginRight: "15px", marginTop: "40px",}}  className="text-3xl sm:text-3xl font-bold text-gray-900">
             {product.title}
           </h1>
           <div className="flex items-center gap-4 text-sm text-gray-600">

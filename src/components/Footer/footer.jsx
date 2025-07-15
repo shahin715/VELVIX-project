@@ -133,11 +133,11 @@ export default function Component() {
         </div>
 
         {/* Bottom Section */}
-        <div style={{  marginTop: "60px",  }} className="border-t border-gray-700 pt-6">
+        
           <div  className="flex flex-col md:flex-row justify-between items-center mt-6 pt-4 border-t border-gray-700 text-sm text-gray-400 ">
             <div>© 2025 Velvix Ltd | All rights reserved</div>
             <div>Powered By: VELVIX</div>
-          </div>
+          
         </div>
       </div>
     </footer>

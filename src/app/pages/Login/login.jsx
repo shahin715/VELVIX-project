@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import bcrypt from "bcryptjs";
 
@@ -7,11 +7,15 @@ export default function Login() {
   const [form, setForm] = useState({ email: "", password: "" });
   const [error, setError] = useState("");
 
-  // Sample demo user (you can save this during registration instead)
-  const demoUser = {
-    email: "user@example.com",
-    passwordHash: bcrypt.hashSync("123456", 10),
-  };
+  useEffect(() => {
+    if (!localStorage.getItem("user")) {
+      const user = {
+        email: "user@example.com",
+        passwordHash: bcrypt.hashSync("123456", 10),
+      };
+      localStorage.setItem("user", JSON.stringify(user));
+    }
+  }, []);
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -19,9 +23,13 @@ export default function Login() {
 
   const handleLogin = (e) => {
     e.preventDefault();
-    const storedUser = JSON.parse(localStorage.getItem("user")) || demoUser;
+    const storedUser = JSON.parse(localStorage.getItem("user"));
 
-    const passwordMatch = bcrypt.compareSync(form.password, storedUser.passwordHash);
+    const passwordMatch = bcrypt.compareSync(
+      form.password,
+      storedUser.passwordHash
+    );
+
     if (form.email === storedUser.email && passwordMatch) {
       localStorage.setItem("isLoggedIn", "true");
       navigate("/");
@@ -33,8 +41,12 @@ export default function Login() {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-50 px-4">
       <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
-        <h2 className="text-2xl font-bold text-center text-gray-800 mb-6">Log In</h2>
-        {error && <p className="text-red-500 text-sm mb-4 text-center">{error}</p>}
+        <h2 className="text-2xl font-bold text-center text-gray-800 mb-6">
+          Log In
+        </h2>
+        {error && (
+          <p className="text-red-500 text-sm mb-4 text-center">{error}</p>
+        )}
         <form onSubmit={handleLogin} className="space-y-5">
           <input
             type="email"

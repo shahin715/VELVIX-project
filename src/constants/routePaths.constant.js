@@ -20,7 +20,9 @@ const ROUTE_CARTPAGE = "/cart"; // Added for Cart Page
 const ROUTE_THANKYOU = "/thank-you"; // Added for Thank You Page
 const ROUTE_LOGIN = "/login";
 const ROUTE_SETUP = "/setup"; 
-const ROUTE_SIGNUP = "/signup"; // Added for Signup Page
+const ROUTE_SIGNUP = "/signup";
+const ROUTE_COMPONENTSPAGE = "/componentpage";
+
 
 
 // Updated
@@ -49,6 +51,10 @@ const routePaths = {
     ROUTE_THANKYOU, // Added for Thank You Page
     ROUTE_SETUP, // Added for Setup Page
     ROUTE_SIGNUP, // Added for Signup Page
+    ROUTE_COMPONENTSPAGE,
+ 
+
+
 }
 
 export default routePaths;

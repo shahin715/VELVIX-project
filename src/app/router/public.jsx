@@ -73,6 +73,14 @@ const publicRoutes = {
           .default,
       }),
     },
+    {
+      path: routePaths.ROUTE_COMPONENTSPAGE,
+      lazy: async () => ({
+        Component: (await import("../pages/featuredCategories/componentsPage"))
+          .default,
+      }),
+    },
+    
   ],
 };
 

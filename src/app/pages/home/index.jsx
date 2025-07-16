@@ -7,7 +7,7 @@ import FeaturedCPU from "../../../components/Featured_CPU/FeaturedCPU";
 import FeaturedBrandsName from "../../../components/Featured_Brands/FeaturedBrandsName";
 import LowerNavbar from "../../../components/Header/navbar/lowerNavbar";
 import LowerBanner from "../../../components/Lower_Banner/lowerBanner";
-import FeaturedCategories from "../../../components/FeaturedCategories/FeaturedCategories";
+import FeaturedCategories from "../../../components/FeaturedCategoriesSection/featuredCategoriesSection";
 
 function Home() {
   return (

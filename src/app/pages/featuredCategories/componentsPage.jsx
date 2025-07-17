@@ -25,7 +25,7 @@ const componentProducts = [
   {
     id: 1,
     title: "GIGABYTE X870 Eagle WIFI7 AM5 LGA 1718, ATX DDR5",
-    slug: "asus-prime-b450m",
+    slug: "gigabyte-x870-eagle",
     price: 285,
     image: Img1,
   },

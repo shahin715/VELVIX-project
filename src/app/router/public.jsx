@@ -81,15 +81,12 @@ const publicRoutes = {
       }),
     },
     {
-      path: "/product/:category/:slug",
-      lazy: async () => ({
-        Component: (
-          await import(
-            "../../components/FeaturedCategoriesSection/productDetailsPage"
-          )
-        ).default,
-      }),
-    },
+  path: "/product/:category/:slug",
+  lazy: async () => ({
+    Component: (await import("../../components/FeaturedCategoriesSection/productDetailsPage")).default,
+  }),
+},
+
   ],
 };
 

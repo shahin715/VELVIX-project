@@ -11,7 +11,7 @@ export default function productCard({ product }) {
       <h3 className="text-sm font-medium text-gray-800 mb-1 line-clamp-2">
         {product.title}
       </h3>
-      <p className="text-base font-semibold text-orange-600">AED {product.price}</p>
+      <p className="text-base font-semibold text-orange-600">$ {product.price}</p>
     </div>
   );
 }

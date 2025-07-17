@@ -22,7 +22,7 @@ export default function productListPage({ title, products = [] }) {
   );
 
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className="container mx-auto px-4 py-8 min-h-[80vh]">
       <h1 className="text-2xl font-semibold mb-6">{title}</h1>
       <div className="grid grid-cols-12 gap-6">
         <div className="col-span-12 md:col-span-3">

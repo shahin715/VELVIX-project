@@ -22,6 +22,8 @@ const ROUTE_LOGIN = "/login";
 const ROUTE_SETUP = "/setup"; 
 const ROUTE_SIGNUP = "/signup";
 const ROUTE_COMPONENTSPAGE = "/componentpage";
+const ROUTE_GAMINGPAGE= "/gamingpage"
+const ROUTE_PCBUILDER= "/PcBuilder"
 
 
 
@@ -52,6 +54,9 @@ const routePaths = {
     ROUTE_SETUP, // Added for Setup Page
     ROUTE_SIGNUP, // Added for Signup Page
     ROUTE_COMPONENTSPAGE,
+    ROUTE_GAMINGPAGE,
+    ROUTE_PCBUILDER,
+
  
 
 

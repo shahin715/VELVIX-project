@@ -86,6 +86,21 @@ const publicRoutes = {
     Component: (await import("../pages/FeaturedCategories/ComponentProductDetails")).default,
   }),
 },
+{
+      path: routePaths.ROUTE_GAMINGPAGE,
+      lazy: async () => ({
+        Component: (await import("../pages/FeaturedCategories/gamingPage"))
+          .default,
+      }),
+    },
+
+    
+{
+   path: routePaths.ROUTE_PCBUILDER,
+  lazy: async () => ({
+    Component: (await import("../pages/pcBuilder/PcBuilder")).default,
+  }),
+}
 
     
 

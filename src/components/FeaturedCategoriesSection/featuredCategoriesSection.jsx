@@ -16,9 +16,10 @@ import Img15 from "../../assets/images/featuredCategories15.png";
 import Img16 from "../../assets/images/featuredCategories16.png";
 import routePaths from "../../constants/routePaths.constant";
 
+
 const categories = [
    { name: "Components", icon: Img1, href: routePaths.ROUTE_COMPONENTSPAGE },
-  { name: "Gaming", icon: Img2, href: "/categories/gaming" },
+  { name: "Gaming", icon: Img2, href:  routePaths.ROUTE_GAMINGPAGE },
   { name: "Networking", icon: Img3, href: "/categories/networking" },
   { name: "Monitor", icon: Img4, href: "/categories/monitor" },
   { name: "Scanner", icon: Img5, href: "/categories/scanner" },

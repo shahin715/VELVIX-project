@@ -5,10 +5,9 @@ import componentProducts from "./data/componentsData";
 export default function ComponentsPage() {
   return (
     <ProductListPage
-      title="Gaming"
+      title="Components"
       products={componentProducts}
       basePath="components"
     />
   );
 }
-

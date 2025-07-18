@@ -69,39 +69,21 @@ export default function CartPage() {
           return (
             <div
               key={item.id}
-              className={`bg-white rounded-lg shadow p-4 flex flex-col sm:flex-row gap-4 transition-opacity ${
+              className={`bg-white rounded-lg shadow p-4 flex flex-col sm:flex-row justify-between gap-4 transition-opacity ${
                 isLoading ? "opacity-50" : ""
               }`}
             >
+              {/* Image */}
               <img
                 src={item.image}
                 alt={item.title}
                 className="w-24 h-24 object-contain rounded-md self-center sm:self-start"
               />
 
-              <div className="flex flex-col flex-1">
-                <div className="flex justify-between items-start flex-wrap gap-2">
-                  <div>
-                    <h2 className="text-lg font-semibold text-gray-800">
-                      {item.title}
-                    </h2>
-                    <p className="text-sm text-gray-500">
-                      ৳ {parseFloat(item.price).toFixed(2)}
-                    </p>
-                  </div>
-
-                  <div className="text-right">
-                    <p className="font-bold text-gray-900">
-                      ৳ {itemTotal.toFixed(2)}
-                    </p>
-                    <button
-                      className="text-red-500 hover:text-red-700"
-                      onClick={() => handleRemoveItem(item.id)}
-                      disabled={isLoading}
-                    >
-                      <Trash2 className="w-5 h-5 inline" />
-                    </button>
-                  </div>
+              {/* Middle: Title & Quantity */}
+              <div className="flex flex-col justify-between flex-1">
+                <div>
+                  <h2 className="text-lg font-semibold text-gray-800">{item.title}</h2>
                 </div>
 
                 <div className="flex items-center mt-3 max-w-[160px]">
@@ -132,11 +114,25 @@ export default function CartPage() {
                   </button>
                 </div>
               </div>
+
+              {/* Right: Total Price & Delete */}
+              <div className="flex flex-col justify-between items-end text-right min-w-[100px]">
+                <p className="font-bold text-gray-900 text-lg">
+                  ৳ {itemTotal.toFixed(2)}
+                </p>
+                <button
+                  className="text-red-500 hover:text-red-700"
+                  onClick={() => handleRemoveItem(item.id)}
+                  disabled={isLoading}
+                >
+                  <Trash2 className="w-5 h-5 inline" />
+                </button>
+              </div>
             </div>
           );
         })}
 
-        {/* Total and Checkout */}
+        {/* Subtotal and Checkout */}
         <div className="border-t pt-6 flex flex-col sm:flex-row justify-between items-center gap-4 text-center sm:text-right">
           <div>
             <p className="text-sm text-gray-600">
@@ -147,7 +143,7 @@ export default function CartPage() {
 
           <button
             className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-lg font-semibold flex items-center gap-3 transition text-lg"
-            onClick={() => navigate("/checkout")} // ✅ Navigate to checkout
+            onClick={() => navigate("/checkout")}
             disabled={cartItems.length === 0}
           >
             <ShoppingBag className="w-6 h-6" />
@@ -159,6 +155,7 @@ export default function CartPage() {
     </div>
   );
 }
+
 
 
 

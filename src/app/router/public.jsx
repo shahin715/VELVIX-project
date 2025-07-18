@@ -80,6 +80,13 @@ const publicRoutes = {
           .default,
       }),
     },
+    {
+  path: "/components/:slug",
+  lazy: async () => ({
+    Component: (await import("../pages/FeaturedCategories/ComponentProductDetails")).default,
+  }),
+},
+
     
 
   ],

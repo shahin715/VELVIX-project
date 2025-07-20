@@ -22,8 +22,9 @@ const ROUTE_LOGIN = "/login";
 const ROUTE_SETUP = "/setup"; 
 const ROUTE_SIGNUP = "/signup";
 const ROUTE_COMPONENTSPAGE = "/componentpage";
-const ROUTE_GAMINGPAGE= "/gamingpage"
-const ROUTE_PCBUILDER= "/PcBuilder"
+const ROUTE_GAMINGPAGE= "/gamingpage";
+const ROUTE_PCBUILDER= "/PcBuilder";
+const ROUTE_MOTHERBOARD= "/Motherboard";
 
 
 
@@ -56,6 +57,8 @@ const routePaths = {
     ROUTE_COMPONENTSPAGE,
     ROUTE_GAMINGPAGE,
     ROUTE_PCBUILDER,
+    ROUTE_MOTHERBOARD,
+
 
  
 

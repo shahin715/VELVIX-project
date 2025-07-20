@@ -100,8 +100,13 @@ const publicRoutes = {
   lazy: async () => ({
     Component: (await import("../pages/pcBuilder/PcBuilder")).default,
   }),
+},
+{
+   path: routePaths.ROUTE_MOTHERBOARD,
+  lazy: async () => ({
+    Component: (await import("../pages/pcBuilder/Motherboard")).default,
+  }),
 }
-
     
 
   ],

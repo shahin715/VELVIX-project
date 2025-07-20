@@ -98,7 +98,7 @@ export default function DynamicNavbar({
             )}
 
             <button
-              onClick={onPcBuilderClick}
+              onClick={() => navigate("/PcBuilder")}
               className="bg-gray-800 hover:bg-gray-900 text-white px-4 py-3 h-14 flex items-center gap-2 rounded"
             >
               <Monitor className="w-4 h-4" />
@@ -158,4 +158,3 @@ export default function DynamicNavbar({
     </nav>
   );
 }
-

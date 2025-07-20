@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import Img1 from '../../assets/images/banner1.jpeg';
+import Img1 from '../../assets/images/banner10.JPG';
 import Img2 from '../../assets/images/banner2.jpg';
-import Img3 from '../../assets/images/banner3.webp';
+import Img3 from '../../assets/images/banner3.JPG';
 import Img4 from '../../assets/images/banner4.jpg';
-import Img5 from '../../assets/images/banner5.webp';
 
-
-const bannerImages = [Img1, Img2, Img3, Img4, Img5];
+const bannerImages = [Img1, Img2, Img3, Img4];
 
 function Banner() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -30,19 +28,18 @@ function Banner() {
   }, []);
 
   return (
-     
-   <div  className="container-box">
-      <div className="relative w-full h-[56.25vw] max-h-[70vh] mx-auto bg-black overflow-hidden">
+    <div className="container-box mt-10">
+      <div className="relative w-full mx-auto overflow-hidden rounded-lg shadow-lg">
         <div
-          className="flex transition-transform duration-700 ease-in-out h-full"
+          className="flex transition-transform duration-700 ease-in-out"
           style={{ transform: `translateX(-${currentSlide * 100}%)` }}
         >
           {bannerImages.map((image, index) => (
-            <div key={index} className="min-w-full h-full">
+            <div key={index} className="min-w-full">
               <img
                 src={image}
                 alt={`Banner ${index + 1}`}
-                className="w-full h-full object-cover object-center"
+                className="w-full h-auto object-cover"
               />
             </div>
           ))}
@@ -63,9 +60,7 @@ function Banner() {
         </button>
       </div>
     </div>
-  
   );
 }
 
 export default Banner;
-

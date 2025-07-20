@@ -106,7 +106,31 @@ const publicRoutes = {
   lazy: async () => ({
     Component: (await import("../pages/pcBuilder/Motherboard")).default,
   }),
-}
+},
+{
+   path: routePaths.ROUTE_PROCESSOR,
+  lazy: async () => ({
+    Component: (await import("../pages/pcBuilder/Processor")).default,
+  }),
+},
+{
+   path: routePaths.ROUTE_MEMORY,
+  lazy: async () => ({
+    Component: (await import("../pages/pcBuilder/Memory")).default,
+  }),
+},
+{
+   path: routePaths.ROUTE_SSD,
+  lazy: async () => ({
+    Component: (await import("../pages/pcBuilder/Ssd")).default,
+  }),
+},
+{
+   path: routePaths.ROUTE_GAMING,
+  lazy: async () => ({
+    Component: (await import("../pages/pcBuilder/GamingPc")).default,
+  }),
+},
     
 
   ],

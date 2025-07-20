@@ -27,14 +27,14 @@ const componentRouteMap = {
   motherboard: routePaths.ROUTE_MOTHERBOARD,
   processor: routePaths.ROUTE_PROCESSOR,
   gpu: routePaths.ROUTE_GPU,
-  memory: "/pcbuilder/memory",
-  ssd: "/pcbuilder/ssd",
-  accessories: "/pcbuilder/accessories",
+  memory: routePaths.ROUTE_MEMORY,
+  ssd: routePaths.ROUTE_SSD,
+  accessories:routePaths.ROUTE_GAMING,
 };
 
 export default function PcBuilder() {
   const [hideUnconfigured, setHideUnconfigured] = useState(false);
-  const { selectedParts } = usePcBuilder();
+  const { selectedParts, clearAllParts } = usePcBuilder();
   const { addToCart } = useCart();
   const navigate = useNavigate();
 
@@ -64,9 +64,17 @@ export default function PcBuilder() {
   );
 
   const handleAddToCart = () => {
-    Object.values(selectedParts).forEach((part) => {
-      if (part) addToCart(part);
+    Object.entries(selectedParts).forEach(([category, part]) => {
+      if (part) {
+        const itemWithTitle = {
+          ...part,
+          title: part.title || part.name || "Unnamed Product",
+          category,
+        };
+        addToCart(itemWithTitle);
+      }
     });
+    clearAllParts();
     navigate("/cart");
   };
 
@@ -110,7 +118,7 @@ export default function PcBuilder() {
               <div className="text-right">
                 <p className="text-gray-600 text-sm">Total Amount</p>
                 <p className="text-lg font-bold text-gray-800">
-                  AED {Object.values(selectedParts).reduce((acc, item) => acc + (item?.price || 0), 0)}
+                  $ {Object.values(selectedParts).reduce((acc, item) => acc + (item?.price || 0), 0)}
                 </p>
                 <p className="text-gray-500 text-xs">
                   {Object.values(selectedParts).filter(Boolean).length} items
@@ -146,7 +154,7 @@ export default function PcBuilder() {
                           />
                           <div>
                             <p className="font-medium">{selected.name}</p>
-                            <p className="text-gray-500">AED {selected.price}</p>
+                            <p className="text-gray-500">$ {selected.price}</p>
                           </div>
                         </div>
                       ) : (
@@ -171,4 +179,6 @@ export default function PcBuilder() {
     </div>
   );
 }
+
+
 

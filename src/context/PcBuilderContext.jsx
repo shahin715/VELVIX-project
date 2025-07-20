@@ -2,6 +2,9 @@ import { createContext, useContext, useState } from "react";
 
 const PcBuilderContext = createContext();
 
+// ✅ Hook must be defined OUTSIDE any component/function
+export const usePcBuilder = () => useContext(PcBuilderContext);
+
 export const PcBuilderProvider = ({ children }) => {
   const [selectedParts, setSelectedParts] = useState({});
 
@@ -20,12 +23,18 @@ export const PcBuilderProvider = ({ children }) => {
     });
   };
 
+  const clearAllParts = () => {
+    setSelectedParts({});
+  };
+
   return (
-    <PcBuilderContext.Provider value={{ selectedParts, addPart, removePart }}>
+    <PcBuilderContext.Provider
+      value={{ selectedParts, addPart, removePart, clearAllParts }}
+    >
       {children}
     </PcBuilderContext.Provider>
   );
 };
 
-export const usePcBuilder = () => useContext(PcBuilderContext);
+
 

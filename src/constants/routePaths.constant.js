@@ -25,6 +25,10 @@ const ROUTE_COMPONENTSPAGE = "/componentpage";
 const ROUTE_GAMINGPAGE= "/gamingpage";
 const ROUTE_PCBUILDER= "/PcBuilder";
 const ROUTE_MOTHERBOARD= "/Motherboard";
+const ROUTE_PROCESSOR= "/Processor";
+const ROUTE_MEMORY= "/Memory";
+const ROUTE_SSD= "/Ssd";
+const ROUTE_GAMING= "/Gaming";
 
 
 
@@ -51,13 +55,18 @@ const routePaths = {
     ROUTE_CHECKOUT,
     ROUTE_DEALTODAYDETAILS,
     ROUTE_CARTPAGE, 
-    ROUTE_THANKYOU, // Added for Thank You Page
-    ROUTE_SETUP, // Added for Setup Page
-    ROUTE_SIGNUP, // Added for Signup Page
+    ROUTE_THANKYOU, 
+    ROUTE_SETUP,
+    ROUTE_SIGNUP, 
     ROUTE_COMPONENTSPAGE,
     ROUTE_GAMINGPAGE,
     ROUTE_PCBUILDER,
     ROUTE_MOTHERBOARD,
+    ROUTE_PROCESSOR,
+    ROUTE_MEMORY,
+    ROUTE_SSD,
+    ROUTE_GAMING,
+
 
 
  

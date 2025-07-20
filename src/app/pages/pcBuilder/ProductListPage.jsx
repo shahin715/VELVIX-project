@@ -3,7 +3,7 @@ import { ArrowRightLeft, Heart } from "lucide-react";
 import Pagination from "./Pagination";
 import { usePcBuilder } from "../../../context/PcBuilderContext";
 
-export default function ProductListPage({ title, products }) {
+export default function ProductListPage({ title, products, categoryKey }) {
   const [priceRange, setPriceRange] = useState([0, 100000]);
   const [minPrice, setMinPrice] = useState(0);
   const [maxPrice, setMaxPrice] = useState(100000);
@@ -114,7 +114,7 @@ export default function ProductListPage({ title, products }) {
                 </div>
                 <button
                   className="bg-blue-100 text-blue-700 hover:bg-blue-200 px-4 py-2 rounded-md"
-                  onClick={() => addPart("Motherboard", product)}
+                  onClick={() => addPart(categoryKey, product)}
                 >
                   Add To PC Builder
                 </button>
@@ -133,3 +133,4 @@ export default function ProductListPage({ title, products }) {
     </div>
   );
 }
+

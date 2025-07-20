@@ -13,11 +13,11 @@ export default function CartPage() {
     0
   );
 
-  const handleQuantityChange = async (itemId, newQuantity) => {
+ const handleQuantityChange = async (itemId, newQuantity, category) => {
     const quantity = Math.max(1, Math.floor(newQuantity));
     setLoadingItems((prev) => new Set(prev).add(itemId));
     try {
-      await updateQuantity(itemId, quantity);
+      await updateQuantity(itemId, quantity, category);
     } finally {
       setLoadingItems((prev) => {
         const newSet = new Set(prev);
@@ -27,10 +27,10 @@ export default function CartPage() {
     }
   };
 
-  const handleRemoveItem = async (itemId) => {
+  const handleRemoveItem = async (itemId, category) => {
     setLoadingItems((prev) => new Set(prev).add(itemId));
     try {
-      await removeFromCart(itemId);
+      await removeFromCart(itemId, category);
     } finally {
       setLoadingItems((prev) => {
         const newSet = new Set(prev);
@@ -83,13 +83,24 @@ export default function CartPage() {
               {/* Middle: Title & Quantity */}
               <div className="flex flex-col justify-between flex-1">
                 <div>
-                  <h2 className="text-lg font-semibold text-gray-800">{item.title}</h2>
+                  <h2 className="text-lg font-semibold text-gray-800">
+                    {item.title}{" "}
+                    <span className="text-xs text-gray-500">
+                      ({item.category})
+                    </span>
+                  </h2>
                 </div>
 
                 <div className="flex items-center mt-3 max-w-[160px]">
                   <button
                     className="px-2 py-1 border rounded-l hover:bg-gray-100 disabled:opacity-50"
-                    onClick={() => handleQuantityChange(item.id, item.quantity - 1)}
+                    onClick={() =>
+                      handleQuantityChange(
+                        item.id,
+                        item.quantity - 1,
+                        item.category
+                      )
+                    }
                     disabled={isLoading || item.quantity <= 1}
                   >
                     <Minus className="w-4 h-4" />
@@ -101,13 +112,23 @@ export default function CartPage() {
                     className="w-14 text-center border-y border-gray-300"
                     value={item.quantity}
                     onChange={(e) =>
-                      handleQuantityChange(item.id, parseInt(e.target.value) || 1)
+                      handleQuantityChange(
+                        item.id,
+                        parseInt(e.target.value) || 1,
+                        item.category
+                      )
                     }
                     disabled={isLoading}
                   />
                   <button
                     className="px-2 py-1 border rounded-r hover:bg-gray-100 disabled:opacity-50"
-                    onClick={() => handleQuantityChange(item.id, item.quantity + 1)}
+                    onClick={() =>
+                      handleQuantityChange(
+                        item.id,
+                        item.quantity + 1,
+                        item.category
+                      )
+                    }
                     disabled={isLoading || item.quantity >= 99}
                   >
                     <Plus className="w-4 h-4" />
@@ -122,7 +143,8 @@ export default function CartPage() {
                 </p>
                 <button
                   className="text-red-500 hover:text-red-700"
-                  onClick={() => handleRemoveItem(item.id)}
+               onClick={() => handleRemoveItem(item.id, item.category)}
+
                   disabled={isLoading}
                 >
                   <Trash2 className="w-5 h-5 inline" />
@@ -136,7 +158,8 @@ export default function CartPage() {
         <div className="border-t pt-6 flex flex-col sm:flex-row justify-between items-center gap-4 text-center sm:text-right">
           <div>
             <p className="text-sm text-gray-600">
-              Subtotal ({cartItems.reduce((sum, item) => sum + item.quantity, 0)} items)
+              Subtotal (
+              {cartItems.reduce((sum, item) => sum + item.quantity, 0)} items)
             </p>
             <h2 className="text-xl font-bold">৳ {totalPrice.toFixed(2)}</h2>
           </div>
@@ -155,7 +178,3 @@ export default function CartPage() {
     </div>
   );
 }
-
-
-
-

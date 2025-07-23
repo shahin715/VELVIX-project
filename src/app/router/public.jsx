@@ -151,51 +151,75 @@ const publicRoutes = {
       }),
     },
     {
-      path: routePaths.ROUTE_COMPONENTSLANDING, 
+      path: routePaths.ROUTE_COMPONENTSLANDING,
       lazy: async () => ({
-        Component: (
-          await import("../pages/gaming/ComponentsLanding")
-        ).default,
-      }),
-    },
-     {
-      path: routePaths.ROUTE_ABOUTUS, 
-      lazy: async () => ({
-        Component: (
-          await import("../pages/aboutus/AboutUs")
-        ).default,
-      }),
-    },
-     {
-      path: routePaths.ROUTE_CORPORATE, 
-      lazy: async () => ({
-        Component: (
-          await import("../pages/corporate/Corporate")
-        ).default,
+        Component: (await import("../pages/gaming/ComponentsLanding")).default,
       }),
     },
     {
-      path: routePaths.ROUTE_BRAND, 
+      path: routePaths.ROUTE_ABOUTUS,
       lazy: async () => ({
-        Component: (
-          await import("../pages/brand/Brand")
-        ).default,
+        Component: (await import("../pages/aboutus/AboutUs")).default,
       }),
     },
     {
-      path: routePaths.ROUTE_BLOG, 
+      path: routePaths.ROUTE_CORPORATE,
       lazy: async () => ({
-        Component: (
-          await import("../pages/blog/Blog")
-        ).default,
+        Component: (await import("../pages/corporate/Corporate")).default,
       }),
     },
-     {
-      path: routePaths.ROUTE_CONTACTUS, 
+    {
+      path: routePaths.ROUTE_BRAND,
       lazy: async () => ({
-        Component: (
-          await import("../pages/contactUs/ContactUs")
-        ).default,
+        Component: (await import("../pages/brand/Brand")).default,
+      }),
+    },
+    {
+      path: routePaths.ROUTE_BLOG,
+      lazy: async () => ({
+        Component: (await import("../pages/blog/Blog")).default,
+      }),
+    },
+    {
+      path: routePaths.ROUTE_CONTACTUS,
+      lazy: async () => ({
+        Component: (await import("../pages/contactUs/ContactUs")).default,
+      }),
+    },
+    {
+      path: routePaths.ROUTE_TABLE,
+      lazy: async () => ({
+        Component: (await import("../pages/pcBuilder/Table")).default,
+      }),
+    },
+    {
+      path: routePaths.ROUTE_CHAIR,
+      lazy: async () => ({
+        Component: (await import("../pages/pcBuilder/Chair")).default,
+      }),
+    },
+    {
+      path: routePaths.ROUTE_MOUSE,
+      lazy: async () => ({
+        Component: (await import("../pages/pcBuilder/Mouse")).default,
+      }),
+    },
+    {
+      path: routePaths.ROUTE_KEYBOARD,
+      lazy: async () => ({
+        Component: (await import("../pages/pcBuilder/Keyboard")).default,
+      }),
+    },
+    {
+      path: routePaths.ROUTE_GPU,
+      lazy: async () => ({
+        Component: (await import("../pages/pcBuilder/Gpu")).default,
+      }),
+    },
+    {
+      path: routePaths.ROUTE_MOUSEPAD,
+      lazy: async () => ({
+        Component: (await import("../pages/pcBuilder/Mousepad")).default,
       }),
     },
   ],

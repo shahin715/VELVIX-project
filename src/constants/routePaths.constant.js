@@ -37,6 +37,15 @@ const ROUTE_CORPORATE="/Corporate";
 const ROUTE_BRAND="/Brand";
 const ROUTE_BLOG="/Blog";
 const ROUTE_CONTACTUS="/Contactus"
+const ROUTE_TABLE="/Table"
+const ROUTE_CHAIR = "/Chair";
+const ROUTE_MOUSE = "/Mouse";
+const ROUTE_KEYBOARD = "/Keyboard";
+const ROUTE_GPU = "/Gpu";
+const ROUTE_MOUSEPAD = "/Mousepad";
+
+
+
 
 
 // Updated
@@ -81,6 +90,12 @@ const routePaths = {
     ROUTE_BRAND,
     ROUTE_BLOG,
     ROUTE_CONTACTUS,
+    ROUTE_TABLE,
+    ROUTE_CHAIR,
+    ROUTE_MOUSE,
+    ROUTE_KEYBOARD,
+    ROUTE_GPU,
+    ROUTE_MOUSEPAD,
 
 
 

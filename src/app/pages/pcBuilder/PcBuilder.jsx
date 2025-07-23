@@ -26,11 +26,17 @@ import routePaths from "../../../constants/routePaths.constant";
 const componentRouteMap = {
   motherboard: routePaths.ROUTE_MOTHERBOARD,
   processor: routePaths.ROUTE_PROCESSOR,
-  gpu: routePaths.ROUTE_GPU,
   memory: routePaths.ROUTE_MEMORY,
   ssd: routePaths.ROUTE_SSD,
-  accessories:routePaths.ROUTE_GAMING,
+  gpu: routePaths.ROUTE_GPU,
+  table: routePaths.ROUTE_TABLE,
+  chair: routePaths.ROUTE_CHAIR,
+  mouse: routePaths.ROUTE_MOUSE,
+  keyboard: routePaths.ROUTE_KEYBOARD,
+  mousepad: routePaths.ROUTE_MOUSEPAD,
+  gamingpc: routePaths.ROUTE_GAMING,
 };
+
 
 export default function PcBuilder() {
   const [hideUnconfigured, setHideUnconfigured] = useState(false);
@@ -43,19 +49,12 @@ export default function PcBuilder() {
     { key: "processor", name: "Processor (CPU)", icon: Cpu },
     { key: "memory", name: "Memory (RAM)", icon: MemoryStick },
     { key: "ssd", name: "SSD (Internal)", icon: HardDrive },
-    { key: "accessories", name: "Gaming Accessories", icon: Gamepad2 },
     { key: "table", name: "Gaming Table", icon: Table },
     { key: "chair", name: "Gaming Chair", icon: Armchair },
     { key: "mouse", name: "Gaming Mouse", icon: Mouse },
     { key: "keyboard", name: "Gaming Keyboard", icon: Keyboard },
-    { key: "cooler", name: "Gaming RGB Cooler", icon: Fan },
-    { key: "psu", name: "Gaming PSU", icon: Power },
-    { key: "chasis", name: "Gaming Chassis", icon: Computer },
     { key: "gpu", name: "Graphic Card", icon: Monitor },
     { key: "mousepad", name: "Gaming Mouse Pad", icon: Mouse },
-    { key: "headphone", name: "Gaming Headphone", icon: Headphones },
-    { key: "gamingram", name: "Gaming RAM", icon: MemoryStick },
-    { key: "gamingmobo", name: "Gaming Motherboard", icon: CircuitBoard },
     { key: "gamingpc", name: "Gaming PC", icon: Computer },
   ];
 

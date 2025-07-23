@@ -76,7 +76,7 @@ const publicRoutes = {
     {
       path: routePaths.ROUTE_COMPONENTSPAGE,
       lazy: async () => ({
-        Component: (await import("../pages/featCategories/OtherComponentPage"))
+        Component: (await import("../pages/featCategories/componentsPage"))
           .default,
       }),
     },

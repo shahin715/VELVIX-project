@@ -84,7 +84,7 @@ const publicRoutes = {
       path: "/components/:slug",
       lazy: async () => ({
         Component: (
-          await import("../pages/FeaturedCategories/ComponentProductDetails")
+          await import("../pages/FeaturedCategories/componentProductDetails")
         ).default,
       }),
     },

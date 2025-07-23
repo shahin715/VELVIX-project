@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import componentProducts from "./data/componentsData";
 import ProductDetails from "../../../components/FeaturedCategoriesSection/ProductDetails"; // Reusable UI component
 
-export default function ComponentProductDetails() {
+export default function componentProductDetails() {
   const { slug } = useParams();
   const product = componentProducts.find((p) => p.slug === slug);
 

@@ -29,7 +29,14 @@ const ROUTE_PROCESSOR= "/Processor";
 const ROUTE_MEMORY= "/Memory";
 const ROUTE_SSD= "/Ssd";
 const ROUTE_GAMING= "/Gaming";
-
+const ROUTE_PROMOTIONALDETAILS= "/Promotionaldetails";
+const ROUTE_FEATUREDCPUDETAILS="/Featuredcpudetails";
+const ROUTE_COMPONENTSLANDING="/ComponentsLanding";
+const ROUTE_ABOUTUS="/AboutUs";
+const ROUTE_CORPORATE="/Corporate";
+const ROUTE_BRAND="/Brand";
+const ROUTE_BLOG="/Blog";
+const ROUTE_CONTACTUS="/Contactus"
 
 
 // Updated
@@ -66,6 +73,14 @@ const routePaths = {
     ROUTE_MEMORY,
     ROUTE_SSD,
     ROUTE_GAMING,
+    ROUTE_PROMOTIONALDETAILS,
+    ROUTE_FEATUREDCPUDETAILS,
+    ROUTE_COMPONENTSLANDING,
+    ROUTE_ABOUTUS,
+    ROUTE_CORPORATE,
+    ROUTE_BRAND,
+    ROUTE_BLOG,
+    ROUTE_CONTACTUS,
 
 
 

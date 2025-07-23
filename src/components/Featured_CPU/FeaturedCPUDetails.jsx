@@ -10,156 +10,105 @@ import {
   MessageCircle,
 } from "lucide-react";
 import { useCart } from "../../context/CartContext";
-import Img1 from "../../assets/images/Deals_today1.jpg";
-import Img2 from "../../assets/images/Dealstoday2.png";
-import Img3 from "../../assets/images/Deals_today3.png";
-import Img4 from "../../assets/images/Deals_today4.png";
-import Img5 from "../../assets/images/Deals_today5.webp";
-import Img6 from "../../assets/images/Deals_today6.webp";
-import toast from "react-hot-toast";
 
+import Img1 from "../../assets/images/featured1.png";
+import Img2 from "../../assets/images/featured2.jpg";
+import Img3 from "../../assets/images/featured3.png";
+import Img4 from "../../assets/images/featured4.png";
+import toast from "react-hot-toast";
 
 const allProducts = [
   {
     id: "1",
-    title: "ZOTAC GAMING GeForce RTX 5060",
-    brand: "ZOTAC",
-    sku: "ZOT5060",
+    title: "Intel 12th Gen Core i5-12400F LGA 1700 Dual",
+    brand: "Intel",
+    sku: "I5-12400F",
     price: "820.00",
     image: Img1,
     keyFeatures: [
-      { label: "Memory", value: "8GB GDDR6" },
-      { label: "Interface", value: "PCIe 4.0" },
-      { label: "Cooling", value: "Dual Fan" },
+      { label: "Cores", value: "6" },
+      { label: "Threads", value: "12" },
+      { label: "Base Clock", value: "2.5 GHz" },
     ],
     mainFeatures: [
-      { label: "Boost Clock", value: "1800 MHz" },
-      { label: "Ports", value: "HDMI, DisplayPort" },
-      { label: "Power", value: "450W Recommended" },
-      { label: "Warranty", value: "3 years" },
+      { label: "Boost Clock", value: "4.4 GHz" },
+      { label: "Socket", value: "LGA 1700" },
+      { label: "TDP", value: "65W" },
+      { label: "Warranty", value: "3 Years" },
     ],
     warrantyOptions: [
-      {
-        id: "warranty-1",
-        label: "3 year manufacturer warranty",
-        value: "free",
-      },
+      { id: "warranty-1", label: "3 years official warranty", value: "free" },
     ],
   },
   {
     id: "2",
-    title: "ASUS PRIME B760M-A WIFI",
-    brand: "ASUS",
-    sku: "B760M-WIFI",
-    price: "120.00",
+    title: "AMD Ryzen 5 7600 Desktop Processor",
+    brand: "AMD",
+    sku: "RYZEN-7600",
+    price: "22.00",
     image: Img2,
     keyFeatures: [
-      { label: "Socket", value: "LGA 1700" },
-      { label: "Form Factor", value: "mATX" },
-      { label: "WiFi", value: "Yes" },
+      { label: "Cores", value: "6" },
+      { label: "Threads", value: "12" },
+      { label: "Base Clock", value: "3.8 GHz" },
     ],
     mainFeatures: [
-      { label: "RAM Support", value: "DDR5 7200MHz" },
-      { label: "M.2 Slots", value: "2x Gen4" },
-      { label: "USB", value: "USB 3.2 Gen 2" },
-      { label: "Warranty", value: "3 years" },
+      { label: "Boost Clock", value: "5.1 GHz" },
+      { label: "Socket", value: "AM5" },
+      { label: "TDP", value: "65W" },
+      { label: "Warranty", value: "3 Years" },
     ],
     warrantyOptions: [
-      {
-        id: "warranty-2",
-        label: "3 year official warranty",
-        value: "free",
-      },
+      { id: "warranty-2", label: "3 years official warranty", value: "free" },
     ],
   },
   {
     id: "3",
-    title: "ASUS PRIME H610M-A WIFI",
-    brand: "ASUS",
-    sku: "H610M-A",
+    title: "Intel Core i9-14900K Tray processor",
+    brand: "Intel",
+    sku: "I9-14900K",
     price: "110.00",
     image: Img3,
     keyFeatures: [
-      { label: "Chipset", value: "Intel H610" },
-      { label: "WiFi", value: "Included" },
-      { label: "Form Factor", value: "Micro ATX" },
+      { label: "Cores", value: "24 (8P + 16E)" },
+      { label: "Threads", value: "32" },
+      { label: "Base Clock", value: "3.2 GHz" },
     ],
     mainFeatures: [
-      { label: "RAM", value: "DDR4" },
-      { label: "Storage", value: "2x SATA, 1x M.2" },
-      { label: "LAN", value: "1 Gb" },
-      { label: "Audio", value: "HD Audio" },
+      { label: "Boost Clock", value: "6.0 GHz" },
+      { label: "Socket", value: "LGA 1700" },
+      { label: "TDP", value: "125W" },
+      { label: "Warranty", value: "3 Years" },
     ],
     warrantyOptions: [
-      { id: "warranty-3", label: "2 years warranty", value: "free" },
+      { id: "warranty-3", label: "3 years official warranty", value: "free" },
     ],
   },
   {
     id: "4",
-    title: "Lexar ARES RGB DDR5 RAM 32GB Kit",
-    brand: "Lexar",
-    sku: "ARES-DDR5",
+    title: "Intel 13th Gen Core i9-13900KF Box Processor",
+    brand: "Intel",
+    sku: "I9-13900KF",
     price: "52.00",
     image: Img4,
     keyFeatures: [
-      { label: "Capacity", value: "32GB (2x16GB)" },
-      { label: "Speed", value: "5200MHz" },
-      { label: "RGB", value: "Yes" },
+      { label: "Cores", value: "24 (8P + 16E)" },
+      { label: "Threads", value: "32" },
+      { label: "Base Clock", value: "3.0 GHz" },
     ],
     mainFeatures: [
-      { label: "Type", value: "DDR5" },
-      { label: "Voltage", value: "1.25V" },
-      { label: "Warranty", value: "Limited Lifetime" },
+      { label: "Boost Clock", value: "5.8 GHz" },
+      { label: "Socket", value: "LGA 1700" },
+      { label: "TDP", value: "125W" },
+      { label: "Warranty", value: "3 Years" },
     ],
     warrantyOptions: [
-      { id: "warranty-4", label: "Lifetime warranty", value: "free" },
-    ],
-  },
-  {
-    id: "5",
-    title: "Gigabyte Z790 Eagle AX LGA 1700 ATX",
-    brand: "Gigabyte",
-    sku: "Z790-EAGLE",
-    price: "299.99",
-    image: Img5,
-    keyFeatures: [
-      { label: "Chipset", value: "Intel Z790" },
-      { label: "WiFi", value: "WiFi 6E" },
-      { label: "Form Factor", value: "ATX" },
-    ],
-    mainFeatures: [
-      { label: "PCIe", value: "PCIe 5.0 x16" },
-      { label: "Memory", value: "DDR5 8000" },
-      { label: "Audio", value: "ALC897" },
-    ],
-    warrantyOptions: [
-      { id: "warranty-5", label: "3-year warranty", value: "free" },
-    ],
-  },
-  {
-    id: "6",
-    title: "WD Black 8TB SSD NVMe M.2 SN850X",
-    brand: "Western Digital",
-    sku: "SN850X-8TB",
-    price: "529.99",
-    image: Img6,
-    keyFeatures: [
-      { label: "Capacity", value: "8TB" },
-      { label: "Interface", value: "PCIe Gen4" },
-      { label: "Form Factor", value: "M.2 2280" },
-    ],
-    mainFeatures: [
-      { label: "Speed", value: "7300 MB/s Read" },
-      { label: "Write", value: "6600 MB/s" },
-      { label: "TBW", value: "1200TB" },
-    ],
-    warrantyOptions: [
-      { id: "warranty-6", label: "5 years warranty", value: "free" },
+      { id: "warranty-4", label: "3 years official warranty", value: "free" },
     ],
   },
 ];
 
-export default function DealsTodayDetails() {
+export default function FeaturedCPUDetails() {
   const { id } = useParams();
   const product = allProducts.find((p) => p.id === id);
   const [quantity, setQuantity] = useState(1);
@@ -180,7 +129,7 @@ export default function DealsTodayDetails() {
   return (
     <div className="container mx-auto px-4 py-10 container-box min-h-[80vh]">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
-        {/* Product Image */}
+        {/* Image */}
         <div className="flex flex-col items-center">
           <div className="w-full max-w-md aspect-[4/3] bg-gray-100 rounded-lg overflow-hidden p-4">
             <img
@@ -200,16 +149,9 @@ export default function DealsTodayDetails() {
           </div>
         </div>
 
-        {/* Product Details */}
+        {/* Product Info */}
         <div className="flex flex-col gap-6">
-          <h1
-            style={{
-              marginLeft: "15px",
-              marginRight: "15px",
-              marginTop: "40px",
-            }}
-            className="text-3xl sm:text-3xl font-bold text-gray-900"
-          >
+          <h1 className="text-3xl sm:text-3xl font-bold text-gray-900">
             {product.title}
           </h1>
           <div className="flex items-center gap-4 text-sm text-gray-600">
@@ -241,12 +183,13 @@ export default function DealsTodayDetails() {
           </div>
           <p className="text-sm text-gray-500">Inclusive of VAT.</p>
 
+          {/* Ratings */}
           <div className="flex items-center gap-2 text-gray-600">
             {[...Array(5)].map((_, i) => (
               <Star
                 key={i}
                 className={`w-4 h-4 ${
-                  i < 3
+                  i < 4
                     ? "fill-yellow-400 text-yellow-400"
                     : "fill-gray-300 text-gray-300"
                 }`}
@@ -255,7 +198,7 @@ export default function DealsTodayDetails() {
             <span className="text-sm ml-2">0 Review</span>
           </div>
 
-          {/* Compare & Wishlist */}
+          {/* Wishlist & Share */}
           <div className="flex items-center gap-4 text-sm text-gray-600">
             <button className="flex items-center gap-1 hover:text-orange-600">
               <Heart className="h-4 w-4" /> Add to Wishlist
@@ -282,7 +225,7 @@ export default function DealsTodayDetails() {
             ))}
           </div>
 
-          {/* Quantity and Cart */}
+          {/* Quantity + Add to Cart */}
           <div className="flex items-center gap-4">
             <div className="flex border rounded-md">
               <button
@@ -318,7 +261,7 @@ export default function DealsTodayDetails() {
         </div>
       </div>
 
-      {/* Tabs Section */}
+      {/* Tabs */}
       <div className="mt-12">
         <div className="flex border-b text-sm ">
           {["specifications", "description", "review"].map((tab) => (
@@ -373,8 +316,8 @@ export default function DealsTodayDetails() {
           {activeTab === "description" && (
             <div className="text-gray-700">
               <p>
-                This is a placeholder description for {product.title}. Add full
-                product details here.
+                This is a high-performance processor: {product.title}. Perfect
+                for both gamers and creators.
               </p>
             </div>
           )}

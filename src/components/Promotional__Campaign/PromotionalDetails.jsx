@@ -10,156 +10,117 @@ import {
   MessageCircle,
 } from "lucide-react";
 import { useCart } from "../../context/CartContext";
-import Img1 from "../../assets/images/Deals_today1.jpg";
-import Img2 from "../../assets/images/Dealstoday2.png";
-import Img3 from "../../assets/images/Deals_today3.png";
-import Img4 from "../../assets/images/Deals_today4.png";
-import Img5 from "../../assets/images/Deals_today5.webp";
-import Img6 from "../../assets/images/Deals_today6.webp";
+import Img1 from "../../assets/images/promotional1.webp";
+import Img2 from "../../assets/images/promotional2.png";
+import Img3 from "../../assets/images/promotional3.png";
+import Img4 from "../../assets/images/promotional4.png";
 import toast from "react-hot-toast";
-
-
 const allProducts = [
   {
     id: "1",
-    title: "ZOTAC GAMING GeForce RTX 5060",
-    brand: "ZOTAC",
-    sku: "ZOT5060",
+    title: "CP BUDGET GAMING/WORKSTATION BUNDLE SET DESKTOP COMPUTER",
+    brand: "VELVIX",
+    sku: "BUNDLE-CP01",
     price: "820.00",
     image: Img1,
     keyFeatures: [
-      { label: "Memory", value: "8GB GDDR6" },
-      { label: "Interface", value: "PCIe 4.0" },
-      { label: "Cooling", value: "Dual Fan" },
+      { label: "CPU", value: "Core i5 12400F" },
+      { label: "Graphics", value: "RTX 3050 8GB" },
+      { label: "Storage", value: "1TB NVMe" },
     ],
     mainFeatures: [
-      { label: "Boost Clock", value: "1800 MHz" },
-      { label: "Ports", value: "HDMI, DisplayPort" },
-      { label: "Power", value: "450W Recommended" },
-      { label: "Warranty", value: "3 years" },
+      { label: "RAM", value: "16GB DDR4" },
+      { label: "Connectivity", value: "WiFi Ready" },
+      { label: "OS", value: "Windows 11" },
+      { label: "Warranty", value: "1 Year" },
     ],
     warrantyOptions: [
       {
-        id: "warranty-1",
-        label: "3 year manufacturer warranty",
+        id: "warranty-01",
+        label: "1 year warranty from manufacturer",
         value: "free",
       },
     ],
   },
   {
     id: "2",
-    title: "ASUS PRIME B760M-A WIFI",
-    brand: "ASUS",
-    sku: "B760M-WIFI",
-    price: "120.00",
+    title: "Dual Band Tenda U9 11AC USB WiFi Adapter",
+    brand: "Tenda",
+    sku: "U9-AC650",
+    price: "22.00",
     image: Img2,
     keyFeatures: [
-      { label: "Socket", value: "LGA 1700" },
-      { label: "Form Factor", value: "mATX" },
-      { label: "WiFi", value: "Yes" },
+      { label: "Speed", value: "Up to 650Mbps" },
+      { label: "Bands", value: "Dual Band 2.4GHz + 5GHz" },
+      { label: "Port", value: "USB 2.0" },
     ],
     mainFeatures: [
-      { label: "RAM Support", value: "DDR5 7200MHz" },
-      { label: "M.2 Slots", value: "2x Gen4" },
-      { label: "USB", value: "USB 3.2 Gen 2" },
-      { label: "Warranty", value: "3 years" },
+      { label: "OS Support", value: "Windows 11/10/8.1/8/7" },
+      { label: "Installation", value: "Plug & Play" },
+      { label: "Warranty", value: "1 Year" },
     ],
     warrantyOptions: [
       {
-        id: "warranty-2",
-        label: "3 year official warranty",
+        id: "warranty-02",
+        label: "1 year replacement warranty",
         value: "free",
       },
     ],
   },
   {
     id: "3",
-    title: "ASUS PRIME H610M-A WIFI",
-    brand: "ASUS",
-    sku: "H610M-A",
+    title: "Galax Vivance-24F Gaming Monitor",
+    brand: "Galax",
+    sku: "VIVANCE-24F",
     price: "110.00",
     image: Img3,
     keyFeatures: [
-      { label: "Chipset", value: "Intel H610" },
-      { label: "WiFi", value: "Included" },
-      { label: "Form Factor", value: "Micro ATX" },
+      { label: "Display", value: '24" FHD IPS' },
+      { label: "Refresh Rate", value: "165Hz" },
+      { label: "Ports", value: "HDMI, DisplayPort" },
     ],
     mainFeatures: [
-      { label: "RAM", value: "DDR4" },
-      { label: "Storage", value: "2x SATA, 1x M.2" },
-      { label: "LAN", value: "1 Gb" },
-      { label: "Audio", value: "HD Audio" },
+      { label: "Panel", value: "Fast IPS" },
+      { label: "Response Time", value: "1ms" },
+      { label: "Adaptive Sync", value: "Yes" },
+      { label: "Warranty", value: "2 Years" },
     ],
     warrantyOptions: [
-      { id: "warranty-3", label: "2 years warranty", value: "free" },
+      {
+        id: "warranty-03",
+        label: "2-year official warranty",
+        value: "free",
+      },
     ],
   },
   {
     id: "4",
-    title: "Lexar ARES RGB DDR5 RAM 32GB Kit",
-    brand: "Lexar",
-    sku: "ARES-DDR5",
+    title: "Plustek OpticSlim 2610 Pro A4 Scanner",
+    brand: "Plustek",
+    sku: "OPTIC2610",
     price: "52.00",
     image: Img4,
     keyFeatures: [
-      { label: "Capacity", value: "32GB (2x16GB)" },
-      { label: "Speed", value: "5200MHz" },
-      { label: "RGB", value: "Yes" },
+      { label: "Resolution", value: "1200 dpi" },
+      { label: "Scan Type", value: "Flatbed A4" },
+      { label: "Connectivity", value: "USB" },
     ],
     mainFeatures: [
-      { label: "Type", value: "DDR5" },
-      { label: "Voltage", value: "1.25V" },
-      { label: "Warranty", value: "Limited Lifetime" },
+      { label: "Scan Speed", value: "15s per page" },
+      { label: "Software", value: "Included" },
+      { label: "Warranty", value: "1 Year" },
     ],
     warrantyOptions: [
-      { id: "warranty-4", label: "Lifetime warranty", value: "free" },
-    ],
-  },
-  {
-    id: "5",
-    title: "Gigabyte Z790 Eagle AX LGA 1700 ATX",
-    brand: "Gigabyte",
-    sku: "Z790-EAGLE",
-    price: "299.99",
-    image: Img5,
-    keyFeatures: [
-      { label: "Chipset", value: "Intel Z790" },
-      { label: "WiFi", value: "WiFi 6E" },
-      { label: "Form Factor", value: "ATX" },
-    ],
-    mainFeatures: [
-      { label: "PCIe", value: "PCIe 5.0 x16" },
-      { label: "Memory", value: "DDR5 8000" },
-      { label: "Audio", value: "ALC897" },
-    ],
-    warrantyOptions: [
-      { id: "warranty-5", label: "3-year warranty", value: "free" },
-    ],
-  },
-  {
-    id: "6",
-    title: "WD Black 8TB SSD NVMe M.2 SN850X",
-    brand: "Western Digital",
-    sku: "SN850X-8TB",
-    price: "529.99",
-    image: Img6,
-    keyFeatures: [
-      { label: "Capacity", value: "8TB" },
-      { label: "Interface", value: "PCIe Gen4" },
-      { label: "Form Factor", value: "M.2 2280" },
-    ],
-    mainFeatures: [
-      { label: "Speed", value: "7300 MB/s Read" },
-      { label: "Write", value: "6600 MB/s" },
-      { label: "TBW", value: "1200TB" },
-    ],
-    warrantyOptions: [
-      { id: "warranty-6", label: "5 years warranty", value: "free" },
+      {
+        id: "warranty-04",
+        label: "1 year manufacturer warranty",
+        value: "free",
+      },
     ],
   },
 ];
 
-export default function DealsTodayDetails() {
+export default function PromotionalDetails() {
   const { id } = useParams();
   const product = allProducts.find((p) => p.id === id);
   const [quantity, setQuantity] = useState(1);
@@ -180,7 +141,6 @@ export default function DealsTodayDetails() {
   return (
     <div className="container mx-auto px-4 py-10 container-box min-h-[80vh]">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
-        {/* Product Image */}
         <div className="flex flex-col items-center">
           <div className="w-full max-w-md aspect-[4/3] bg-gray-100 rounded-lg overflow-hidden p-4">
             <img
@@ -189,29 +149,10 @@ export default function DealsTodayDetails() {
               className="object-contain w-full h-full"
             />
           </div>
-          <div className="mt-4">
-            <div className="w-20 h-16 border border-orange-500 rounded-md p-2">
-              <img
-                src={product.image}
-                alt="Thumb"
-                className="object-contain w-full h-full"
-              />
-            </div>
-          </div>
         </div>
 
-        {/* Product Details */}
         <div className="flex flex-col gap-6">
-          <h1
-            style={{
-              marginLeft: "15px",
-              marginRight: "15px",
-              marginTop: "40px",
-            }}
-            className="text-3xl sm:text-3xl font-bold text-gray-900"
-          >
-            {product.title}
-          </h1>
+          <h1 className="text-3xl font-bold text-gray-900">{product.title}</h1>
           <div className="flex items-center gap-4 text-sm text-gray-600">
             <span>
               Brand: <strong>{product.brand}</strong>
@@ -224,7 +165,6 @@ export default function DealsTodayDetails() {
             </span>
           </div>
 
-          {/* Key Features */}
           <div>
             <h2 className="font-semibold text-gray-800">Key Features</h2>
             <ul className="list-disc list-inside text-gray-700">
@@ -255,10 +195,9 @@ export default function DealsTodayDetails() {
             <span className="text-sm ml-2">0 Review</span>
           </div>
 
-          {/* Compare & Wishlist */}
           <div className="flex items-center gap-4 text-sm text-gray-600">
             <button className="flex items-center gap-1 hover:text-orange-600">
-              <Heart className="h-4 w-4" /> Add to Wishlist
+              <Heart className="h-4 w-4" /> Wishlist
             </button>
             <button className="flex items-center gap-1 hover:text-orange-600">
               <Facebook className="h-4 w-4 text-blue-600" />
@@ -268,7 +207,6 @@ export default function DealsTodayDetails() {
             </button>
           </div>
 
-          {/* Warranty */}
           <div>
             <h2 className="font-semibold text-gray-800">Warranty</h2>
             {product.warrantyOptions.map((opt) => (
@@ -282,7 +220,6 @@ export default function DealsTodayDetails() {
             ))}
           </div>
 
-          {/* Quantity and Cart */}
           <div className="flex items-center gap-4">
             <div className="flex border rounded-md">
               <button
@@ -318,9 +255,8 @@ export default function DealsTodayDetails() {
         </div>
       </div>
 
-      {/* Tabs Section */}
       <div className="mt-12">
-        <div className="flex border-b text-sm ">
+        <div className="flex border-b text-sm">
           {["specifications", "description", "review"].map((tab) => (
             <button
               key={tab}

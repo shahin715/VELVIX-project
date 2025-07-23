@@ -81,12 +81,14 @@ const publicRoutes = {
       }),
     },
     {
-  path: "/components/:slug",
-  lazy: async () => ({
-    Component: (await import("../pages/FeaturedCategories/ComponentProductDetails")).default,
-  }),
-},
-{
+      path: "/components/:slug",
+      lazy: async () => ({
+        Component: (
+          await import("../pages/FeaturedCategories/ComponentProductDetails")
+        ).default,
+      }),
+    },
+    {
       path: routePaths.ROUTE_GAMINGPAGE,
       lazy: async () => ({
         Component: (await import("../pages/FeaturedCategories/gamingPage"))
@@ -94,45 +96,108 @@ const publicRoutes = {
       }),
     },
 
-    
-{
-   path: routePaths.ROUTE_PCBUILDER,
-  lazy: async () => ({
-    Component: (await import("../pages/pcBuilder/PcBuilder")).default,
-  }),
-},
-{
-   path: routePaths.ROUTE_MOTHERBOARD,
-  lazy: async () => ({
-    Component: (await import("../pages/pcBuilder/Motherboard")).default,
-  }),
-},
-{
-   path: routePaths.ROUTE_PROCESSOR,
-  lazy: async () => ({
-    Component: (await import("../pages/pcBuilder/Processor")).default,
-  }),
-},
-{
-   path: routePaths.ROUTE_MEMORY,
-  lazy: async () => ({
-    Component: (await import("../pages/pcBuilder/Memory")).default,
-  }),
-},
-{
-   path: routePaths.ROUTE_SSD,
-  lazy: async () => ({
-    Component: (await import("../pages/pcBuilder/Ssd")).default,
-  }),
-},
-{
-   path: routePaths.ROUTE_GAMING,
-  lazy: async () => ({
-    Component: (await import("../pages/pcBuilder/GamingPc")).default,
-  }),
-},
-    
-
+    {
+      path: routePaths.ROUTE_PCBUILDER,
+      lazy: async () => ({
+        Component: (await import("../pages/pcBuilder/PcBuilder")).default,
+      }),
+    },
+    {
+      path: routePaths.ROUTE_MOTHERBOARD,
+      lazy: async () => ({
+        Component: (await import("../pages/pcBuilder/Motherboard")).default,
+      }),
+    },
+    {
+      path: routePaths.ROUTE_PROCESSOR,
+      lazy: async () => ({
+        Component: (await import("../pages/pcBuilder/Processor")).default,
+      }),
+    },
+    {
+      path: routePaths.ROUTE_MEMORY,
+      lazy: async () => ({
+        Component: (await import("../pages/pcBuilder/Memory")).default,
+      }),
+    },
+    {
+      path: routePaths.ROUTE_SSD,
+      lazy: async () => ({
+        Component: (await import("../pages/pcBuilder/Ssd")).default,
+      }),
+    },
+    {
+      path: routePaths.ROUTE_GAMING,
+      lazy: async () => ({
+        Component: (await import("../pages/pcBuilder/GamingPc")).default,
+      }),
+    },
+    {
+      path: `${routePaths.ROUTE_PROMOTIONALDETAILS}/:id`,
+      lazy: async () => ({
+        Component: (
+          await import(
+            "../../components/Promotional__Campaign/PromotionalDetails"
+          )
+        ).default,
+      }),
+    },
+    {
+      path: `${routePaths.ROUTE_FEATUREDCPUDETAILS}/:id`,
+      lazy: async () => ({
+        Component: (
+          await import("../../components/Featured_CPU/FeaturedCPUDetails")
+        ).default,
+      }),
+    },
+    {
+      path: routePaths.ROUTE_COMPONENTSLANDING, 
+      lazy: async () => ({
+        Component: (
+          await import("../pages/gaming/ComponentsLanding")
+        ).default,
+      }),
+    },
+     {
+      path: routePaths.ROUTE_ABOUTUS, 
+      lazy: async () => ({
+        Component: (
+          await import("../pages/aboutus/AboutUs")
+        ).default,
+      }),
+    },
+     {
+      path: routePaths.ROUTE_CORPORATE, 
+      lazy: async () => ({
+        Component: (
+          await import("../pages/corporate/Corporate")
+        ).default,
+      }),
+    },
+    {
+      path: routePaths.ROUTE_BRAND, 
+      lazy: async () => ({
+        Component: (
+          await import("../pages/brand/Brand")
+        ).default,
+      }),
+    },
+    {
+      path: routePaths.ROUTE_BLOG, 
+      lazy: async () => ({
+        Component: (
+          await import("../pages/blog/Blog")
+        ).default,
+      }),
+    },
+     {
+      path: routePaths.ROUTE_CONTACTUS, 
+      lazy: async () => ({
+        Component: (
+          await import("../pages/contactUs/ContactUs")
+        ).default,
+      }),
+    },
   ],
 };
 

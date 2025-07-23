@@ -12,12 +12,12 @@ import {
 
 // ✅ Default static nav items
 const defaultNavItems = [
-  { label: "GAMING", href: "/gaming" },
-  { label: "ABOUT US", href: "/about" },
-  { label: "CORPORATE", href: "/corporate" },
-  { label: "BRANDS", href: "/brands" },
-  { label: "BLOG", href: "/blog" },
-  { label: "CONTACT US", href: "/contact" },
+  { label: "GAMING", href: "/ComponentsLanding" },
+  { label: "ABOUT US", href: "/AboutUs" },
+  { label: "CORPORATE", href: "/Corporate" },
+  { label: "BRANDS", href: "/Brand" },
+  { label: "BLOG", href: "/Blog" },
+  { label: "CONTACT US", href: "/Contactus" },
 ];
 
 export default function DynamicNavbar({

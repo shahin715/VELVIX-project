@@ -1,13 +1,14 @@
 import React from "react";
 import ProductListPage from "../../../components/FeaturedCategoriesSection/productListPage";
-import componentProducts from "./data/featuredcomponentsData";
+import componentProducts from "./data/OtherComponentsData";
 
-export default function gamingPage() {
+export default function componentsPage() {
   return (
     <ProductListPage
-      title="Components"
+      title="Gaming"
       products={componentProducts}
       basePath="components"
     />
   );
 }
+

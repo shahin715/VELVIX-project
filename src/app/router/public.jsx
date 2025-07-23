@@ -76,7 +76,7 @@ const publicRoutes = {
     {
       path: routePaths.ROUTE_COMPONENTSPAGE,
       lazy: async () => ({
-        Component: (await import("../pages/featuredCategories/FeaturedComponentPage"))
+        Component: (await import("../pages/featCategories/OtherComponentPage"))
           .default,
       }),
     },
@@ -84,14 +84,14 @@ const publicRoutes = {
       path: "/components/:slug",
       lazy: async () => ({
         Component: (
-          await import("../pages/featuredCategories/componentProductDetails")
+          await import("../pages/featCategories/ComponentProductDetails")
         ).default,
       }),
     },
     {
       path: routePaths.ROUTE_GAMINGPAGE,
       lazy: async () => ({
-        Component: (await import("../pages/featuredCategories/gamingPage"))
+        Component: (await import("../pages/featCategories/gamingPage"))
           .default,
       }),
     },

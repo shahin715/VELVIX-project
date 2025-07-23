@@ -137,7 +137,7 @@ const publicRoutes = {
       lazy: async () => ({
         Component: (
           await import(
-            "../../components/Promotional__Campaign/PromotionalDetails"
+            "../../components/promotionalCampaign/PromotionalDetails"
           )
         ).default,
       }),

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Img1 from "../../assets/images/featuredCategories01.png";
 import Img2 from "../../assets/images/featuredCategories02.png";
 import Img3 from "../../assets/images/featuredCategories03.png";
@@ -16,10 +17,9 @@ import Img15 from "../../assets/images/featuredCategories15.png";
 import Img16 from "../../assets/images/featuredCategories16.png";
 import routePaths from "../../constants/routePaths.constant";
 
-
 const categories = [
-   { name: "Components", icon: Img1, href: routePaths.ROUTE_COMPONENTSPAGE },
-  { name: "Gaming", icon: Img2, href:  routePaths.ROUTE_GAMINGPAGE },
+  { name: "Components", icon: Img1, href: routePaths.ROUTE_COMPONENTSPAGE },
+  { name: "Gaming", icon: Img2, href: routePaths.ROUTE_GAMINGPAGE },
   { name: "Networking", icon: Img3, href: "/categories/networking" },
   { name: "Monitor", icon: Img4, href: "/categories/monitor" },
   { name: "Scanner", icon: Img5, href: "/categories/scanner" },
@@ -36,7 +36,7 @@ const categories = [
   { name: "Gaming Keyboard", icon: Img16, href: "/categories/gaming-keyboard" },
 ];
 
-export default function featuredCategoriesSection() {
+export default function FeaturedCategoriesSection() {
   return (
     <div className="bg-gray-50 px-3 sm:px-6 py-6">
       <div className="container-box">
@@ -51,7 +51,7 @@ export default function featuredCategoriesSection() {
         {/* Grid */}
         <div className="grid sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-4 sm:gap-6 bg-gradient-to-b from-green-50 to-white p-4 rounded-lg">
           {categories.map((category) => (
-            <a key={category.name} href={category.href} className="group w-full h-full">
+            <Link key={category.name} to={category.href} className="group w-full h-full">
               <div className="w-full h-full flex flex-col items-center justify-center p-6 space-y-3 rounded-lg shadow-sm transition-all hover:shadow-md hover:scale-105 bg-white border border-gray-200 min-h-[180px]">
                 <img
                   src={category.icon}
@@ -64,7 +64,7 @@ export default function featuredCategoriesSection() {
                   {category.name}
                 </p>
               </div>
-            </a>
+            </Link>
           ))}
         </div>
       </div>

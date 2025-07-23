@@ -13,7 +13,7 @@ export default function CartPage() {
     0
   );
 
- const handleQuantityChange = async (itemId, newQuantity, category) => {
+  const handleQuantityChange = async (itemId, newQuantity, category) => {
     const quantity = Math.max(1, Math.floor(newQuantity));
     setLoadingItems((prev) => new Set(prev).add(itemId));
     try {
@@ -84,10 +84,7 @@ export default function CartPage() {
               <div className="flex flex-col justify-between flex-1">
                 <div>
                   <h2 className="text-lg font-semibold text-gray-800">
-                    {item.title}{" "}
-                    <span className="text-xs text-gray-500">
-                      ({item.category})
-                    </span>
+                    {item.title}
                   </h2>
                 </div>
 
@@ -143,8 +140,7 @@ export default function CartPage() {
                 </p>
                 <button
                   className="text-red-500 hover:text-red-700"
-               onClick={() => handleRemoveItem(item.id, item.category)}
-
+                  onClick={() => handleRemoveItem(item.id, item.category)}
                   disabled={isLoading}
                 >
                   <Trash2 className="w-5 h-5 inline" />

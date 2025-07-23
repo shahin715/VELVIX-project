@@ -1,6 +1,6 @@
 import React from "react";
 import ProductListPage from "../../../components/FeaturedCategoriesSection/productListPage";
-import componentProducts from "./data/componentsData";
+import componentProducts from "./data/featuredcomponentsData";
 
 export default function componentsPage() {
   return (

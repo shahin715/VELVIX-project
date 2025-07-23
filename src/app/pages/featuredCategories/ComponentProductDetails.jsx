@@ -1,6 +1,6 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import componentProducts from "./data/componentsData";
+import componentProducts from "./data/featuredcomponentsData";
 import ProductDetails from "../../../components/FeaturedCategoriesSection/ProductDetails"; // Reusable UI component
 
 export default function componentProductDetails() {
